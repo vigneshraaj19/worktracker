@@ -48,6 +48,7 @@ import ProjectTimeline from "@/components/project/ProjectTimeline";
 import NotificationsView from "@/components/notifications/NotificationsView";
 import { useAuth } from "@/lib/auth-context";
 //aagasgag
+//asfasfga
 
 type AppView = "board" | "admin" | "chat" | "notifications";
 
