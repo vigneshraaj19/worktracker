@@ -47,9 +47,6 @@ import ProjectDashboard from "@/components/project/ProjectDashboard";
 import ProjectTimeline from "@/components/project/ProjectTimeline";
 import NotificationsView from "@/components/notifications/NotificationsView";
 import { useAuth } from "@/lib/auth-context";
-//aagasgag
-//asfasfga
-//kjj
 
 type AppView = "board" | "admin" | "chat" | "notifications";
 
