@@ -49,6 +49,7 @@ import NotificationsView from "@/components/notifications/NotificationsView";
 import { useAuth } from "@/lib/auth-context";
 //aagasgag
 //asfasfga
+//kjj
 
 type AppView = "board" | "admin" | "chat" | "notifications";
 
