@@ -47,8 +47,6 @@ import ProjectDashboard from "@/components/project/ProjectDashboard";
 import ProjectTimeline from "@/components/project/ProjectTimeline";
 import NotificationsView from "@/components/notifications/NotificationsView";
 import { useAuth } from "@/lib/auth-context";
-//asfafqwf
-
 type AppView = "board" | "admin" | "chat" | "notifications";
 
 export default function App() {
