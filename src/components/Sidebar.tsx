@@ -105,7 +105,7 @@ export default function Sidebar({
             letterSpacing: "-0.02em",
           }}
         >
-          Vignesh Stack
+          Vicky Stack
         </Typography>
       </Box>
 
