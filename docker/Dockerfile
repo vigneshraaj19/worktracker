@@ -11,6 +11,12 @@ COPY . .
 # runs (they get baked into the static JS bundle). Runtime env vars in the
 # nginx container below do nothing for CRA/Vite static builds.
 # Add one ARG + ENV pair per variable your app needs.
+ARG VITE_SUPABASE_URL
+ARG VITE_SUPABASE_ANON_KEY
+
+ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
+ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
+
 ARG REACT_APP_API_URL
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
 

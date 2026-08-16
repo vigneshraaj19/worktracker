@@ -10,12 +10,12 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: us-east-1                     # match terraform var.aws_region
-  ECR_REPOSITORY: worktracker-prod-repo     # match "${project_name}-${environment}-repo"
-  ECS_CLUSTER: worktracker-prod-cluster     # match "${project_name}-${environment}-cluster"
-  ECS_SERVICE: worktracker-prod-service     # match "${project_name}-${environment}-service"
-  ECS_TASK_FAMILY: worktracker-prod-task    # match "${project_name}-${environment}-task"
-  CONTAINER_NAME: worktracker-container     # match "${project_name}-container"
+  AWS_REGION: us-east-1 # match terraform var.aws_region
+  ECR_REPOSITORY: worktracker-prod-repo # match "${project_name}-${environment}-repo"
+  ECS_CLUSTER: worktracker-prod-cluster # match "${project_name}-${environment}-cluster"
+  ECS_SERVICE: worktracker-prod-service # match "${project_name}-${environment}-service"
+  ECS_TASK_FAMILY: worktracker-prod-task # match "${project_name}-${environment}-task"
+  CONTAINER_NAME: worktracker-container # match "${project_name}-container"
 
 jobs:
   deploy:
@@ -43,6 +43,8 @@ jobs:
         run: |
           docker build \
             -f docker/Dockerfile \
+            --build-arg VITE_SUPABASE_URL="${{ vars.VITE_SUPABASE_URL }}" \
+            --build-arg VITE_SUPABASE_ANON_KEY="${{ vars.VITE_SUPABASE_ANON_KEY }}" \
             --build-arg REACT_APP_API_URL="${{ vars.REACT_APP_API_URL }}" \
             -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
